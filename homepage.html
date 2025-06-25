@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+  <h1>STUDY, TEST AND RELAX HUB</h1>
+  <br>
+  <div class="navbar">
+    <a class="nav" href="homepage.html">Home</a>
+    <a class="nav" href="todolist.html">Study</a>
+    <a class="nav" href="index.html">Test</a>
+    <a class="nav" href="relax_hub.html">Relax</a>
+    <a class="nav" href="contact_us.html">Contact Us</a>
+  </div>
+  <!-- <hr><hr> -->
+  <h2>
+    <marquee>Your Space for Productive Study and Relaxation</marquee>
+  </h2>
+  <!-- <hr><hr> -->
+  <br>
+  <div class="title">
+    <div class="mySlides fade">
+
+      <img src="slide1.jpg" style="width:100%;">
+
+    </div>
+
+    <div class="mySlides fade">
+
+      <img src="slide2.webp" style="width:100%;">
+
+    </div>
+
+    <div class="mySlides fade">
+
+      <img src="slide3.webp" style="width:100%;">
+
+    </div>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <br><br>
+  <h2 id="start">Jump In and Explore</h2>
+  <br>
+  <div class="subparts">
+    <div class="item"
+      title="Eliminate distractions and dive into deep work with our Focus Mode. Create the perfect environment for studying and staying productive.">
+      <a href="todolist.html"><img class="rounded-corner" src="study.png"></a>
+    </div>
+    <div class="item"
+      title="Challenge your knowledge with quick quizzes and timed tests. A fun way to track your progress and stay sharp!">
+      <a href="index.html"><img class="rounded-corner" src="test.jpg"></a>
+    </div>
+    <div class="item"
+      title="Take a well-deserved break. Relax with calming visuals and sounds designed to help you recharge before your next study session.">
+      <a href="relax_hub.html"><img class="rounded-corner" src="relax.jpg"></a>
+    </div>
+  </div>
+  <br><br>
+  <div class="footer">
+    <p>Built for minds that never stop learning</p>
+    <p><a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+    </p>
+    <p><a href="contact_us.html">Contact Us</a></p>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+</body>
+
+</html>

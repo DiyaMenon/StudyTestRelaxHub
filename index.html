@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Hub</title>
+    <link rel="stylesheet" href="test_hub.css">
+</head>
+
+<body background="img1.jpg">
+    <div class="container">
+        <h1 style="color: white;">🚀 Test Hub</h1>
+        <div id="menu">
+            <h2>Select Subject:</h2>
+            <button onclick="navigateToMode('IoP')">IoP (Introduction of Programming)</button>
+            <button onclick="navigateToMode('IoCS')">IoCS (Introduction of Computer Science)</button>
+            <button onclick="navigateToMode('DSA')">DSA (Data Structure and Algorithms)</button>
+            <button onclick="navigateToMode('WPP')">WPP (Web Programming and Python)</button>
+        </div>
+    </div> <br>
+
+    <script>
+        function navigateToMode(subject) {
+            localStorage.setItem('selectedSubject', subject);
+            window.location.href = 'mode_selection.html';
+        }
+
+    </script>
+</body>
+
+</html>

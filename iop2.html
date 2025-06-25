@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops & Decision Making</title>
+    <link rel="stylesheet" href="iop.css">  <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Introduction to Programming</h1>
+        <h2>Loops & Decision Making</h2>
+
+        <h2>If-Else Statement</h2>
+        <p>The if-else statement is used to execute a block of code based on a condition.</p>
+
+        <h3>Syntax:</h3>
+        <pre>
+            <code>
+if (condition) {
+    // Code executes if condition is true
+} else {
+    // Code executes if condition is false
+}
+            </code>
+        </pre>
+
+        <h3>Example: Finding the Greatest of Two Numbers</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 20;
+    if (a > b) {
+        printf("A is greater");
+    } else {
+        printf("B is greater");
+    }
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>Explanation:</h3>
+        <p>- If `a` is greater than `b`, the first block executes.</p>
+        <p>- Otherwise, the else block executes.</p>
+
+        <h2>Else-If Statement</h2>
+        <p>The else-if statement allows multiple conditions to be checked in sequence.</p>
+
+        <h3>Syntax:</h3>
+        <pre>
+            <code>
+if (condition1) {
+    // Executes if condition1 is true
+} else if (condition2) {
+    // Executes if condition2 is true
+} else {
+    // Executes if all conditions are false
+}
+            </code>
+        </pre>
+
+        <h3>Example: Checking a Student's Grade</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int marks = 75;
+
+    if (marks >= 90) {
+        printf("Grade: A");
+    } else if (marks >= 80) {
+        printf("Grade: B");
+    } else if (marks >= 70) {
+        printf("Grade: C");
+    } else {
+        printf("Grade: F");
+    }
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>Why Use Else-If Instead of Multiple If Statements?</h3>
+        <p>Using multiple if statements without else-if can cause unnecessary checks:</p>
+        <pre>
+            <code>
+if (marks >= 90) {
+    printf("Grade: A");
+}
+if (marks >= 80) {
+    printf("Grade: B");
+}
+if (marks >= 70) {
+    printf("Grade: C");
+} 
+            </code>
+        </pre>
+        <p>In this case, if `marks = 95`, all three if statements will execute because each one is checked separately. Using `else-if` ensures that only one block runs.</p>
+
+        <h2>While Loop</h2>
+        <p>The while loop executes a block of code repeatedly as long as a condition is true.</p>
+
+        <h3>Example: Print Numbers from 1 to 5</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        printf("%d ", i);
+        i++;
+    }
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h2>For Loop</h2>
+        <p>The for loop executes a block of code a specific number of times.</p>
+
+        <h3>Example: Print Numbers from 1 to 5</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h2>Switch Case</h2>
+        <p>The switch case statement allows selecting a block of code to execute based on a variable's value.</p>
+
+        <h3>Example: Displaying Day of the Week</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int day = 3;
+    switch (day) {
+        case 1:
+            printf("Monday");
+            break;
+        case 2:
+            printf("Tuesday");
+            break;
+        case 3:
+            printf("Wednesday");
+            break;
+        default:
+            printf("Invalid day");
+    }
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h2>Pattern Example</h2>
+        <h3>Pattern:</h3>
+        <pre>
+            <code>
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+            </code>
+        </pre>
+
+        <h3>Code:</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i, j;
+    for (i = 1; i <= 5; i++) {
+        for (j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>Explanation:</h3>
+        <p>- The outer loop (`i`) controls the number of rows.</p>
+        <p>- The inner loop (`j`) controls the number of stars printed per row.</p>
+        <p>- After each row, a newline is printed.</p>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="iop.html">1</a>
+            <span class="active">2</span>
+            <a href="iop3.html">3</a>
+        </div>
+
+    </div>
+</body>
+</html>

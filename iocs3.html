@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computational Problem Solving</title>
+    <link rel="stylesheet" href="iocs.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Introduction to Computer Science</h1>
+
+        <h2>Steps Involved in Program Development Cycle</h2>
+        <p>The program development cycle consists of several phases that ensure systematic and error-free development. The main steps are:</p>
+
+        <ol>
+            <li><strong>Problem Analysis:</strong> Understanding the problem completely and defining the scope.</li>
+            <li><strong>Task Analysis:</strong> Developing multiple possible solutions and selecting the best one.</li>
+            <li><strong>Algorithm Development:</strong> Writing step-by-step instructions for the solution.</li>
+            <li><strong>Algorithm Testing:</strong> Checking if the algorithm gives correct results for different inputs.</li>
+            <li><strong>Coding:</strong> Converting the algorithm into a programming language.</li>
+            <li><strong>Testing and Debugging:</strong> Identifying and fixing errors in the program.</li>
+            <li><strong>Documentation:</strong> Writing explanations and user manuals for future reference.</li>
+            <li><strong>Implementation:</strong> Running the program in a real environment.</li>
+            <li><strong>Maintenance and Enhancement:</strong> Updating the program as needed.</li>
+        </ol>
+        <img src="program_dev_cycle_3.jpg.png" alt="Cycle" style="width:45%; height:20%;">
+        <h2>Program Development Cycle</h2>
+        <h3>1. Problem Analysis</h3>
+        <ul>
+            <li>Analyze the problem in detail to understand requirements.</li>
+            <li>Determine the inputs, outputs, and constraints.</li>
+        </ul>
+
+        <h3>2. Task Analysis</h3>
+        <ul>
+            <li>Identify different ways to solve the problem.</li>
+            <li>Select the most optimal approach.</li>
+        </ul>
+
+        <h3>3. Algorithm Development</h3>
+        <p>Develop a structured, step-by-step method to solve the problem.</p>
+
+        <h3>4. Algorithm Testing</h3>
+        <p>Verify the logic of the algorithm with test cases.</p>
+
+        <h3>5. Coding</h3>
+        <p>Convert the algorithm into a programming language like C, Python, or Java.</p>
+
+        <h3>6. Testing and Debugging</h3>
+        <p>Check for syntax and logical errors, and fix them.</p>
+
+        <h3>7. Documentation</h3>
+        <p>Provide written explanations of the program for future reference.</p>
+
+        <h3>8. Implementation</h3>
+        <p>Deploy the software for actual use.</p>
+
+        <h3>9. Maintenance and Enhancement</h3>
+        <p>Regularly update the software and improve features.</p>
+
+        <h2>Pseudocode</h2>
+        <p>Pseudocode is a way of writing algorithms in simple English-like statements.</p>
+
+        <h3>How to Write Pseudocode?</h3>
+        <ul>
+            <li>Use keywords like <code>BEGIN</code>, <code>END</code>, <code>IF-ELSE</code>, <code>WHILE</code>, etc.</li>
+            <li>Keep it simple and clear.</li>
+            <li>Use indentation for clarity.</li>
+        </ul>
+
+        <h3>Pseudocode Syntax</h3>
+        <pre>
+BEGIN
+    Read number1, number2
+    sum ← number1 + number2
+    Print sum
+END
+        </pre>
+        <h3>Loops in Pseudocode</h3>
+        <pre>
+BEGIN
+    i ← 1
+    WHILE i ≤ 10 DO
+        Print i
+        i ← i + 1
+    END WHILE
+END
+        </pre>
+
+        <h2>Flowcharts</h2>
+        <p>A flowchart is a visual representation of an algorithm using symbols to show the flow of execution.</p>
+
+        <h3>Why Use Flowcharts?</h3>
+        <ul>
+            <li>They provide a clear and structured representation of an algorithm.</li>
+            <li>Help in debugging by visualizing the logic.</li>
+            <li>Make it easier to communicate the design to others.</li>
+        </ul>
+
+        <h3>Common Flowchart Symbols</h3>
+        <ul>
+            <li><strong>Oval:</strong> Represents Start or End of the process.</li>
+            <li><strong>Parallelogram:</strong> Represents Input or Output operations.</li>
+            <li><strong>Rectangle:</strong> Represents a Process (computation, assignments, etc.).</li>
+            <li><strong>Diamond:</strong> Represents a Decision (Yes/No, True/False conditions).</li>
+            <li><strong>Arrows:</strong> Show the direction of flow.</li>
+        </ul>
+        <img src="symbols1_3.jpg.png" alt="Symbol" style="width:45%; height:20%;">
+        <img src="sysmbols2_3.jpg.png" alt="Symbol" style="width:45%; height:20%;">
+        
+
+        <h3>Example: Factorial using Recursion</h3>
+        <pre>
+FUNCTION Factorial(n)
+    IF n = 0 THEN
+        RETURN 1
+    ELSE
+        RETURN n * Factorial(n-1)
+    END IF
+END FUNCTION
+        </pre>
+        <img src="fact_with_3.jpg.png" alt="Factorial using Recursion" style="width:45%; height:20%;">
+
+        <h3>Factorial Without Recursion</h3>
+        <pre>
+BEGIN
+    Read n
+    fact ← 1
+    FOR i FROM 1 TO n DO
+        fact ← fact * i
+    END FOR
+    Print fact
+END
+<img src="fsct_without_3.jpg.png" alt="Factorial without recursion" style=style="width:45%; height:20%;">
+        </pre>
+
+        <h3>Examples of Flowcharts</h3>
+
+        <h4>1. Flowchart to Find the Largest of Three Numbers</h4>
+        <img src="large_flow_3.jpg.png" alt="Largest of Three Numbers" style="width:45%; height:20%;">
+        
+        <h4>2. Flowchart to Print the Sum of First 100 Numbers</h4>
+        <img src="100_3.jpg.png" alt="Sum of First 100 Numbers" style="width:45%; height:20%;">
+        
+        <h4>3. Flowchart to Add Three Numbers</h4>
+        <img src="add3_3.jpg.png" alt="Adding Three Numbers" style="width:45%; height:20%;">
+       
+        
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="iocs1.html">1</a>
+            <a href="iocs2.html">2</a>
+            <span class="active">3</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System</title>
+    <link rel="stylesheet" href="iocs.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Introduction to Computer Science</h1>
+
+        <h2>What is a Number System?</h2>
+        <p>A number system is a mathematical method of representing numbers using symbols. Different number systems are used in computing and mathematics.</p>
+
+        <h2>Types of Number Systems</h2>
+        
+        <!-- Number System Table -->
+        <table border="1">
+            <tr>
+                <th>Number System</th>
+                <th>Base</th>
+                <th>Digits Used</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Binary</td>
+                <td>2</td>
+                <td>0,1</td>
+                <td>1010₂</td>
+            </tr>
+            <tr>
+                <td>Octal</td>
+                <td>8</td>
+                <td>0-7</td>
+                <td>12₈</td>
+            </tr>
+            <tr>
+                <td>Decimal</td>
+                <td>10</td>
+                <td>0-9</td>
+                <td>45₁₀</td>
+            </tr>
+            <tr>
+                <td>Hexadecimal</td>
+                <td>16</td>
+                <td>0-9, A-F</td>
+                <td>1A₁₆</td>
+            </tr>
+        </table>
+        <img src="possible_num.jpg.png" alt="possible" style="width:60%; height:25%;">
+
+        <h2>Binary Number System</h2>
+        <p>Binary is a base-2 number system used in digital computing. It consists of only two digits: <strong>0 and 1</strong>.</p>
+        <p><strong>Example:</strong> 1010₂ in binary represents <strong>10₁₀</strong> in decimal.</p>
+
+        <h2>Octal Number System</h2>
+        <p>Octal is a base-8 number system. It uses digits from <strong>0 to 7</strong> and is often used in computing as a shorthand for binary.</p>
+        <p><strong>Example:</strong> 17₈ in octal represents <strong>15₁₀</strong> in decimal.</p>
+
+        <h2>Decimal Number System</h2>
+        <p>Decimal is the standard base-10 number system used in everyday life. It consists of digits from <strong>0 to 9</strong>.</p>
+        <p><strong>Example:</strong> 125₁₀ remains the same in decimal.</p>
+
+        <h2>Hexadecimal Number System</h2>
+        <p>Hexadecimal is a base-16 system, using digits <strong>0-9</strong> and letters <strong>A-F</strong> to represent values 10-15.</p>
+        <p><strong>Example:</strong> 1A₁₆ in hexadecimal represents <strong>26₁₀</strong> in decimal.</p>
+
+        <h2>Number System Conversions</h2>
+
+        <h3>1. Binary to Octal</h3>
+        <p>To convert a **binary number** into **octal**, group the binary digits in sets of three (starting from the right), then convert each group into its octal equivalent.</p>
+        <p><strong>Example:</strong></p>
+        <p>Binary: **101011** → (grouped as **101 011**) → Octal: **53₈**</p>
+        <img src="bin_octa;_num.jpg.png" alt="Binary to Octal" style="width:60%; height:25%;">
+
+        <h3>2. Binary to Hexadecimal</h3>
+        <p>Group binary digits in sets of four (starting from the right), then convert each group into hexadecimal.</p>
+        <p><strong>Example:</strong></p>
+        <p>Binary: **11011011** → (grouped as **1101 1011**) → Hexadecimal: **DB₁₆**</p>
+        <img src="bin_hexa_num.jpg.png" alt="Binary to HexaDecimal" style="width:60%; height:25%;">
+
+        <h3>3. Binary to Decimal</h3>
+        <p>Multiply each binary digit by **2^position** and sum the values.</p>
+        <p><strong>Example:</strong></p>
+        <p>Binary: **1011₂** = (1×2³) + (0×2²) + (1×2¹) + (1×2⁰) = **11₁₀**</p>
+        <img src="bin_dec_num.jpg.png" alt="Binary to Decimal" style="width:60%; height:25%;">
+
+        <h3>4. Decimal to Binary</h3>
+        <p>Divide the decimal number by 2 repeatedly, noting the remainder at each step.</p>
+        <p><strong>Example:</strong></p>
+        <p>Decimal **25₁₀** → Divide by 2 → Remainders **(1,0,0,1,1)** → Binary **11001₂**</p>
+        <img src="dec_bin_num.jpg.png" alt="Decimal to Binary" style="width:60%; height:25%;">
+
+        <h3>5. Decimal to Octal</h3>
+        <p>Divide the decimal number by 8 repeatedly, noting the remainders.</p>
+        <p><strong>Example:</strong></p>
+        <p>Decimal **98₁₀** → Divide by 8 → Remainders **(2,2,1)** → Octal **122₈**</p>
+        <img src="dec_octal_num.jpg.png" alt="Decimal to Octal" style="width:60%; height:25%;">
+
+        <h3>6. Decimal to Hexadecimal</h3>
+        <p>Divide the decimal number by 16, using hexadecimal symbols for values 10-15.</p>
+        <p><strong>Example:</strong></p>
+        <p>Decimal **254₁₀** → Divide by 16 → Remainders **(14,15)** → Hexadecimal **FE₁₆**</p>
+        <img src="dec_hex_num.jpg.png" alt="Decimal to HexaDecimal" style="width:60%; height:25%;">
+
+        <h2>Importance of Number Systems</h2>
+        <p>Understanding number systems is crucial in:</p>
+        <ul>
+            <li>Efficient programming and computation.</li>
+            <li>Data representation in digital systems.</li>
+            <li>Designing computer hardware and software.</li>
+        </ul>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="iocs1.html">1</a>
+            <span class="active">2</span>
+            <a href="iocs3.html">3</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

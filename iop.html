@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Programming</title>
+    <link rel="stylesheet" href="iop.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <h1>Introduction to Programming</h1>
+        <h2>Overview of C Programming</h2>
+
+        <ul class="benefits">
+            <li><strong>Small and efficient:</strong> C is widely used for system and application development.</li>
+            <li><strong>Easy to implement:</strong> Simple syntax makes it beginner-friendly.</li>
+            <li><strong>Fast execution:</strong> Compiled directly into machine code.</li>
+            <li><strong>Flexible design:</strong> Supports both system-defined and user-defined functions.</li>
+            <li><strong>Foundation for other languages:</strong> Many modern languages like C++, Java, and Python are influenced by C.</li>
+        </ul>
+
+        <h2>Features of C Language</h2>
+        <ul>
+            <li><strong>Procedural Language:</strong> Follows a step-by-step approach.</li>
+            <li><strong>Portable & Fast:</strong> Runs efficiently on different systems.</li>
+            <li><strong>Memory Management:</strong> Uses pointers for direct memory access.</li>
+            <li><strong>Rich Library Support:</strong> Built-in functions for different tasks.</li>
+            <li><strong>Modularity:</strong> Code can be divided into functions for reuse.</li>
+        </ul>
+
+        <h2>Some Terms Are:</h2>
+        <p><strong>Source Code:</strong> The human-readable code written by a programmer before compilation.</p>
+        <p><strong>Output:</strong> The result displayed after executing a program.</p>
+        <p><strong>Function:</strong> A block of code designed to perform a specific task.</p>
+        <p><strong>Library:</strong> A collection of predefined functions available in C (e.g., <stdio.h> for standard input/output).</p>
+        <p><strong>Variable:</strong> A named storage location used to hold data.</p>
+        <p><strong>Keyword:</strong> Reserved words in C that have a predefined meaning (e.g., int, return).</p>
+
+        <h2>Constants in C</h2>
+        <table>
+            <tr>
+                <th colspan="2">CONSTANTS</th>
+            </tr>
+            <tr>
+                <th>Primary</th>
+                <th>Secondary</th>
+            </tr>
+            <tr>
+                <td>int</td>
+                <td>array</td>
+            </tr>
+            <tr>
+                <td>char</td>
+                <td>pointer</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>structure</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>union</td>
+            </tr>
+        </table>
+
+        <h2>Data Types in C</h2>
+        <table>
+            <tr>
+                <th>Data Type</th>
+                <th>Size</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>int</td>
+                <td>4 bytes</td>
+                <td>int num = 5;</td>
+            </tr>
+            <tr>
+                <td>char</td>
+                <td>1 byte</td>
+                <td>char letter = 'A';</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>4 bytes</td>
+                <td>float pi = 3.14;</td>
+            </tr>
+            <tr>
+                <td>double</td>
+                <td>8 bytes</td>
+                <td>double bigPi = 3.14159;</td>
+            </tr>
+        </table>
+
+        <h2>Operators in C</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Operators</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Arithmetic</td>
+                <td>+ , - , * , / , %</td>
+                <td>a + b</td>
+            </tr>
+            <tr>
+                <td>Relational</td>
+                <td>== , != , < , ></td>
+                <td>a > b</td>
+            </tr>
+            <tr>
+                <td>Logical</td>
+                <td>&& , || , !</td>
+                <td>(x > 5 && y < 10)</td>
+            </tr>
+            <tr>
+                <td>Bitwise</td>
+                <td>& , | , ^ , << , >></td>
+                <td>a & b</td>
+            </tr>
+            <tr>
+                <td>Assignment</td>
+                <td>= , += , -= , *=</td>
+                <td>a += 5</td>
+            </tr>
+        </table>
+
+        <h2>Functions in C</h2>
+        <p>A function in C is a block of code that performs a specific task. Functions make programs more structured, modular, and reusable.</p>
+
+        <h3>Why Use Functions?</h3>
+        <ul>
+            <li>**Code Reusability:** Write once, use multiple times.</li>
+            <li>**Improved Readability:** Makes code easier to understand.</li>
+            <li>**Easier Debugging:** Helps isolate errors in smaller blocks.</li>
+            <li>**Modular Design:** Breaks complex tasks into simpler ones.</li>
+        </ul>
+
+        <h3>Example of a Function in C</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+// Function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 10);
+    printf("Sum = %d", result);
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>How Functions Are Created?</h3>
+        <p>A function consists of three parts:</p>
+        <ul>
+            <li>**Function Declaration:** Specifies the function name, return type, and parameters.</li>
+            <li>**Function Definition:** Contains the actual code of the function.</li>
+            <li>**Function Call:** Executes the function when needed.</li>
+        </ul>
+
+        <h3>Example: Function with No Return Value</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+// Function to print a message
+void greet() {
+    printf("Hello, welcome to C programming!");
+}
+
+int main() {
+    greet(); // Function call
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>Explanation:</strong> The greet() function is defined outside main(). It is called in main() to print a message.</p>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <span class="active">1</span>
+            <a href="iop2.html">2</a>
+            <a href="iop3.html">3</a>
+        </div>
+
+    </div>
+</body>
+</html>

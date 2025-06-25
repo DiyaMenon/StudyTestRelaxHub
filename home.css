@@ -1,0 +1,122 @@
+body{
+    background: #1b0d3f; /*0a0f2c or 112d32 or 2c2f3e or 1e1e2f or 2a2f45 or 1b0d3f*/
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+h1{
+    color:white;
+    text-shadow:2px 2px 2px teal;
+}
+/* Background: #0D1117 (dark slate/navy black)
+
+Text Color: #F0F6FC (soft white-blue)
+
+Hover/Active Link Color: #58A6FF (calm blue highlight) */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    align-content: space-around;
+    margin:auto;
+    padding: 10px 0px;
+    background-color:#0D1117;
+    width: 100%;
+    border-radius: 5px;
+}
+nav{
+    padding:1vmax;
+    height: max-content;
+    width:max-content;
+    font-weight: bold;
+}
+.navbar a {
+    color:#f0f6fc;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius:5px;
+    font-size: 20px;
+}
+.navbar a:hover{
+    color:white;
+    background-color: #313152;
+}
+#start{
+    display:block;
+    border:2px double white;
+    padding-top:10px;
+    height:40px;
+    text-align:center;
+}
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    position: relative;
+    margin: auto; 
+} 
+.mySlides{
+    display:none;
+    align-items: center;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition:1.5s;
+}
+  
+.active {
+    background-color: #717171;
+}
+  
+  /* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+}
+  
+.subparts{
+    display: flex;
+    margin:auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content:space-between;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.rounded-corner{
+    border-radius: 20%;
+    height:25vw;
+    width:25vw;
+}
+.item{
+    border-radius: 20%;
+    block-size:25vw;
+}
+.item:hover,.rounded-corner:hover{
+    transform: scale(1.05,1.05);
+    border-radius: 20%;
+}
+.footer{
+    font-size:24px;
+    padding:10px;
+    background-color: #1A1A2E;
+    color: #D1D5DB;
+    border-radius:5px;
+}
+i{
+    color:#012826;
+    background-color:white;
+    border-radius:50%;
+}
