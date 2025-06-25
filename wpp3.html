@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Errors, Lists, Strings, Dictionaries, and Sets</title>
+    <link rel="stylesheet" href="wpp.css"> <!-- Link to CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Web Programming And Python</h1>
+
+        <h2>Python Errors</h2>
+        <p>Errors in Python occur when the code is incorrect or behaves unexpectedly. Below are common types of errors:</p>
+
+        <h3>1. Syntax Errors</h3>
+        <pre>
+# Incorrect Syntax
+print("Hello, World!"  # Missing closing parenthesis
+        </pre>
+        <p><strong>Explanation:</strong> A syntax error occurs when Python cannot understand the code due to incorrect structure.</p>
+
+        <h3>2. Runtime Errors</h3>
+        <pre>
+# Division by zero runtime error
+a = 10 / 0  # This will cause a ZeroDivisionError
+        </pre>
+        <p><strong>Explanation:</strong> This happens during execution. Here, dividing by zero is not allowed.</p>
+
+        <h3>3. Logical Errors</h3>
+        <pre>
+# Incorrect logic
+def multiply(a, b):
+    return a + b  # Should be a * b instead of a + b
+        </pre>
+        <p><strong>Explanation:</strong> The program runs but gives incorrect output due to wrong logic.</p>
+
+        <h2>Lists in Python</h2>
+        <p>A list is a collection of items that are ordered and mutable. It can store different data types.</p>
+        <pre>
+# Creating a list
+fruits = ["apple", "banana", "cherry"]
+
+# List functions
+fruits.append("orange")  # Adds an item
+fruits.insert(1, "grape")  # Inserts at index 1
+fruits.remove("banana")  # Removes an item by value
+fruits.pop(2)  # Removes item at index 2
+fruits.reverse()  # Reverses the list
+fruits.sort()  # Sorts the list
+
+print(fruits)
+        </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>append()</code> adds an element to the end of the list.</li>
+            <li><code>insert()</code> adds an element at a specific index.</li>
+            <li><code>remove()</code> deletes an element by value.</li>
+            <li><code>pop()</code> removes an element at a given index.</li>
+            <li><code>reverse()</code> reverses the list order.</li>
+            <li><code>sort()</code> sorts the list in ascending order.</li>
+        </ul>
+
+        <h2>Strings in Python</h2>
+        <p>Strings are sequences of characters used to store text. Python provides various string functions.</p>
+        <pre>
+text = " Hello, Python! "
+
+# String functions
+print(text.lower())  # Converts to lowercase
+print(text.upper())  # Converts to uppercase
+print(text.strip())  # Removes whitespace
+print(text.replace("Python", "World"))  # Replaces words
+print(text.split(","))  # Splits string into a list
+print(len(text))  # Returns length of string
+        </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>lower()</code> converts all letters to lowercase.</li>
+            <li><code>upper()</code> converts all letters to uppercase.</li>
+            <li><code>strip()</code> removes whitespace from the beginning and end.</li>
+            <li><code>replace()</code> replaces a word or character with another.</li>
+            <li><code>split()</code> splits a string into a list.</li>
+            <li><code>len()</code> returns the number of characters in a string.</li>
+        </ul>
+
+        <h2>Dictionaries in Python</h2>
+        <p>A dictionary stores key-value pairs and allows fast data retrieval.</p>
+        <pre>
+# Creating a dictionary
+student = {"name": "Alice", "age": 20, "course": "CS"}
+
+# Dictionary functions
+print(student.keys())  # Returns all keys
+print(student.values())  # Returns all values
+print(student.items())  # Returns key-value pairs
+student["age"] = 21  # Modifies a value
+student.update({"grade": "A"})  # Adds a new key-value pair
+del student["course"]  # Deletes a key-value pair
+        </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>keys()</code> returns a list of all keys.</li>
+            <li><code>values()</code> returns a list of all values.</li>
+            <li><code>items()</code> returns key-value pairs as tuples.</li>
+            <li><code>update()</code> adds new key-value pairs or updates existing ones.</li>
+            <li><code>del</code> removes a key-value pair.</li>
+        </ul>
+
+        <h2>Sets in Python</h2>
+        <p>Sets are unordered collections of unique elements.</p>
+        <pre>
+# Creating a set
+numbers = {1, 2, 3, 4}
+
+# Set operations
+numbers.add(5)  # Adds an element
+numbers.remove(2)  # Removes an element
+print(numbers.union({6, 7}))  # Combines two sets
+print(numbers.intersection({3, 4, 5}))  # Finds common elements
+numbers.discard(10)  # Removes element if exists, does nothing if not found
+        </pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>add()</code> adds a new element to the set.</li>
+            <li><code>remove()</code> removes an element (raises an error if not found).</li>
+            <li><code>union()</code> combines two sets without duplicates.</li>
+            <li><code>intersection()</code> returns common elements between sets.</li>
+            <li><code>discard()</code> removes an element but does not raise an error if the element is missing.</li>
+        </ul>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="wpp1.html">1</a>
+            <a href="wpp2.html">2</a>
+            <span class="active">3</span>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

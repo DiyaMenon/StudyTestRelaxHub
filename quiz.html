@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="test_hub.css">
+</head>
+
+<body background="img4.jpg">
+    <div class="container_quiz">
+        <h1>🚀 Test Hub</h1>
+
+        <div id="quiz">
+            <h2>
+                <p id="quiz-info"></p>
+            </h2>
+            <div id="questions" align="left"></div>
+            <button id="submitBtn" onclick="submitQuiz()" style="display: block; margin: 10px auto;">✅ Submit</button>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Result</h2>
+            <p id="score"></p>
+        </div> <br>
+
+        <div>
+            <a href="index.html"><input type="submit" value="Test Hub" class="hidden" id="test_hub"></a>
+            <a href="homepage.html"><input type="submit" value="Home Page" class="hidden" id="home_page"></a>
+        </div>
+    </div>
+
+    <script>
+        let questionsData = {
+            "IoP": {
+                "Paper 1": [
+                    { question: "What is the purpose of the #include <stdio.h> directive in a C program?", options: ["A) It defines the main() function", "B) It includes the standard input/output library", "C) It is used to declare variables", "D) It defines user-defined functions"], answer: "B) It includes the standard input/output library" },
+                    { question: "Which of the following is a valid loop structure in C?", options: ["A) for (i = 0; i < 10; i++)", "B) while i < 10 {}", "C) loop (i = 1 to 10)", "D) do i = 1 while i < 10"], answer: "A) for (i = 0; i < 10; i++)" },
+                    { question: "How does the break statement work in a loop?", options: ["A) It stops the entire program", "B) It skips the next iteration", "C) It terminates the loop immediately", "D) It restarts the loop"], answer: "C) It terminates the loop immediately" },
+                    { question: "Which of the following is true about recursion in C?", options: ["A) It is a function calling itself", "B) It requires a base condition to stop", "C) It can cause a stack overflow if not handled properly", "D) All of the above"], answer: "D) All of the above" },
+                    { question: "What is the correct way to declare a pointer in C?", options: ["A) int p*;", "B) int *p;", "C) int& p;", "D) pointer int p;"], answer: "B) int *p" },
+                    { question: "What is the purpose of the sizeof operator in C?", options: ["A) To determine the number of elements in an array;", "B) To find the memory size of a data type or variable", "C) To count the number of bytes used in a file", "D) To compare two numbers"], answer: "B) To find the memory size of a data type or variable" },
+                    { question: " What is the correct syntax to declare an array in C?", options: ["A) array int arr[5];", "B) int arr[5];", "C) int arr = [5];", "D) arr[5] int;"], answer: "B) int arr[5];" },
+                    { question: "Which of the following is not a valid storage class in C?", options: ["A) auto", "B) register", "C) dynamic", "D) static"], answer: "C) dynamic" },
+                    { question: "Which of the following statements is true about struct in C?", options: ["A) struct can contain different data types", "B) struct cannot have functions", "C) sizeof(struct) is always equal to the sum of its members' sizes", "D) struct is only used for file operations"], answer: "A) struct can contain different data types" },
+                    { question: "What does sizeof(int) return in C (on most modern systems)?", options: ["A) 2", "B) 4", "C) 8", "D) Depends on the compiler"], answer: "D) Depends on the compiler" }
+                ],
+                "Paper 2": [
+                    { question: "What is the function of fseek() in C?", options: ["A) Move file pointer to the start", "B) Move file pointer to a specific location", "C) Read a file character by character", "D) Close a file"], answer: "B) Move file pointer to a specific location" },
+                    { question: "What is the difference between malloc() and calloc()?", options: ["A) malloc() initializes memory to 0, calloc() does not", "B) malloc() allocates memory, calloc() initializes it to zero", "C) calloc() can allocate memory for only one variable", "D) malloc() is used for integers, calloc() for arrays"], answer: "B) malloc() allocates memory, calloc() initializes it to zero" },
+                    { question: "Which of the following statements about switch in C is false?", options: ["A) It can work with int and char types", "B) It requires a break statement to exit a case", "C) A default case is mandatory", "D) It does not support float values"], answer: "C) A default case is mandatory" },
+                    { question: "Which of the following correctly represents a NULL pointer?", options: ["A) #NULL", "B) void NULL", "C) ((void *)0)", "D) NULL_PTR"], answer: "C) ((void *)0)" },
+                    { question: "Which header file is required for printf() and scanf() functions in C?", options: ["A) 'string.h'", "B) 'stdlib.h'", "C) 'stdio.h'", "D) 'math.h'"], answer: "C) <stdio.h>" },
+                    { question: "Which of the following is a valid way to allocate dynamic memory in C?", options: ["A) int *p = malloc(10);", "B) int *p = malloc(10 * sizeof(int));", "C) int *p = (int)malloc(10);", "D) int p = malloc(10 * sizeof(int));"], answer: "B) int *p = malloc(10 * sizeof(int));" },
+                    { question: "Which of the following statements is true about do-while loops?", options: ["A) The loop may never execute", "B) The loop executes at least once", "C) The loop condition is checked at the beginning", "D) do-while and while loops work exactly the same way"], answer: "B) The loop executes at least once" },
+                    { question: "Which operator has the highest precedence in C?", options: ["A) * (Multiplication)", "B) + (Addition)", "C) () (Parentheses)", "D) = (Assignment)"], answer: "C) () (Parentheses)" },
+                    { question: "Which of the following is the correct syntax to declare a constant variable in C?", options: ["A) const int x = 10;", "B) int const x = 10;", "C) #define x 10", "D) All of the above"], answer: "D) All of the above" },
+                    { question: "Which of the following is NOT a valid loop in C?", options: ["A) for loop", "B) do-while loop", "C) while loop", "D) repeat-until loop"], answer: "D) repeat-until loop" }
+                ],
+                "Paper 3": [
+                    { question: "Which of the following is a valid declaration of an array?", options: ["A) int arr[5] = {1, 2, 3, 4, 5};", "B) int arr[] = {1, 2, 3, 4, 5};", "C) int arr[5];", "D) All of the above"], answer: "D) All of the above" },
+                    { question: "What is the size of an integer (int) variable in C on a 32-bit system?", options: ["A) 1 byte", "B) 2 bytes", "C) 4 bytes", "D) 8 bytes"], answer: "C) 4 bytes" },
+                    { question: "Which statement is true about functions in C?", options: ["A) Every C program must have a main() function", "B) A function can return multiple values", "C) A function can only be called once", "D) Functions cannot have parameters"], answer: "A) Every C program must have a main() function" },
+                    { question: "Which operator is used for bitwise AND in C?", options: ["A) &&", "B) &", "C) ||", "D) |"], answer: "B) &" },
+                    { question: "What is C programming, and who developed it?", options: ["A) A high-level programming language developed by James Gosling", "B) A low-level programming language developed by Bjarne Stroustrup", "C) A general-purpose programming language developed by Dennis Ritchie", "D) A scripting language developed by Guido van Rossum"], answer: "C) A general-purpose programming language developed by Dennis Ritchie" },
+                    { question: "What is the correct structure of a basic C program?", options: ["A) #include <stdio.h>, main(), statements", "B) main(), #include <stdio.h>, statements", "C) statements, #include <stdio.h>, main()", "D) #include <stdio.h>, statements, main()"], answer: "A) #include <stdio.h>, main(), statements" },
+                    { question: "Which of the following is a valid C variable name?", options: ["A) 1variable", "B) _variableName", "C) variable-name", "D) float"], answer: "B) _variableName" },
+                    { question: "What is the purpose of the printf() function in C?", options: ["A) To take input from the user", "B) To display output on the screen", "C) To perform mathematical calculations", "D) To declare a variable"], answer: "B) To display output on the screen" },
+                    { question: "How many keywords are there in standard C?", options: ["A) 25", "B) 32", "C) 48", "D) 64"], answer: "B) 32" },
+                    { question: "Which of the following is NOT a valid C operator?", options: ["A) +", "B) &&", "C) ===", "D) %"], answer: "C) ===" }
+                ]
+            },
+
+            "IoCS": {
+                "Paper 1": [
+                    { question: "What is the full form of CPU?", options: ["A) Central Processing Unit", "B) Computer Processing Unit", "C) Central Programming Unit", "D) Control Processing Unit"], answer: "A) Central Processing Unit" },
+                    { question: "Which of the following is an example of an output device?", options: ["A) Keyboard", "B) Mouse", "B) Mouse", "D) Scanner"], answer: "B) Mouse" },
+                    { question: "What is the primary function of an operating system?", options: ["A) Perform calculations", "B) Manage computer hardware and software", "C) Connect to the internet", "D) Create documents"], answer: "B) Manage computer hardware and software" },
+                    { question: "What does RAM stand for?", options: ["A) Read Access Memory", "B) Random Access Memory", "C) Rapid Access Memory", "D) Random Allocated Memory"], answer: "B) Random Access Memory" },
+                    { question: "Which of the following is an example of system software?", options: ["A) Microsoft Word", "B) Google Chrome", "C) Windows OS", "D) Adobe Photoshop"], answer: "C) Windows OS" },
+                    { question: "What type of computer memory is non-volatile and used to store firmware?", options: ["A) RAM", "B) ROM", "C) Cache Memory", "D) Registers"], answer: "B) ROM" },
+                    { question: "Which unit is used to measure the speed of a processor?", options: ["A) Hertz (Hz)", "B) Bytes", "C) Pixels", "D) Inches"], answer: "A) Hertz (Hz)" },
+                    { question: "Which of the following is NOT an input device?", options: ["A) Mouse", "B) Keyboard", "C) Printer", "D) Webcam"], answer: "C) Printer" },
+                    { question: "What is the main function of a computer network?", options: ["A) To store data securely", "B) To share resources and information", "C) To create software programs", "D) To enhance processing speed"], answer: "B) To share resources and information" },
+                    { question: "What is the full form of HTTP?", options: ["A) Hypertext Transfer Process", "B) Hypertext Transmission Protocol", "C) Hypertext Transfer Protocol", "D) Hyperlink Transfer Program"], answer: "C) Hypertext Transfer Protocol" }
+                ],
+                "Paper 2": [
+                    { question: "Which of the following is an example of an application software?", options: ["A) Windows OS", "B) Microsoft Word", "C) BIOS", "D) Compiler"], answer: "B) Microsoft Word" },
+                    { question: "What is the main purpose of a compiler?", options: ["A) To edit programs", "B) To convert high-level language to machine language", "C) To execute programs", "D) To store data"], answer: "B) To convert high-level language to machine language" },
+                    { question: "Which of the following is an example of secondary storage?", options: ["A) RAM", "B) ROM", "C) Hard Drive", "D) Cache Memory"], answer: "C) Hard Drive" },
+                    { question: "Which key is used to refresh a webpage?", options: ["A) F1", "B) F5", "C) F12", "D) F8"], answer: "B) F5" },
+                    { question: "Which of the following is the smallest unit of data in a computer?", options: ["A) Bit", "B) Byte", "C) Nibble", "D) Kilobyte"], answer: "A) Bit" },
+                    { question: "What is the brain of the computer?", options: ["A) Hard Drive", "B) RAM", "C) CPU", "D) Monitor"], answer: "C) CPU" },
+                    { question: "Which of the following is an example of an open-source operating system?", options: ["A) Windows 10", "B) macOS", "C) Linux", "D) iOS"], answer: "C) Linux" },
+                    { question: "What does BIOS stand for?", options: ["A) Basic Integrated Operating System", "B) Binary Input Output System", "C) Basic Input Output System", "D) Boot Input Output System"], answer: "C) Basic Input Output System" },
+                    { question: "Which of the following is NOT a programming language?", options: ["A) Java", "B) Python", "C) MS Excel", "D) C++"], answer: "C) MS Excel" },
+                    { question: "Which of the following is an example of an operating system?", options: ["A) Microsoft Office", "B) Windows 11", "C) Google Chrome", "D) Adobe Photoshop"], answer: "B) Windows 11" }
+                ],
+                "Paper 3": [
+                    { question: "What does GUI stand for in computer terms?", options: ["A) General User Interface", "B) Graphical User Interaction", "C) Graphical User Interface", "D) General Utility Interface"], answer: "C) Graphical User Interface" },
+                    { question: "What is the primary function of a firewall in a computer network?", options: ["A) To speed up internet browsing", "B) To block unauthorized access", "C) To store passwords", "D) To increase processing power"], answer: "B) To block unauthorized access" },
+                    { question: "What does the abbreviation ‘USB’ stand for?", options: ["A) Universal Serial Bus", "B) Unified System Block", "C) Universal Storage Base", "D) Unique Serial Bit"], answer: "A) Universal Serial Bus" },
+                    { question: "Which of the following is an example of cloud storage?", options: ["A) Hard Disk", "B) Google Drive", "C) DVD", "D) RAM"], answer: "B) Google Drive" },
+                    { question: "What type of software is used to browse the internet?", options: ["A) Antivirus", "B) Web Browser", "C) Media Player", "D) Compiler"], answer: "B) Web Browser" },
+                    { question: "What is the function of an IP address?", options: ["A) To identify a website", "B) To store data", "C) To uniquely identify a device on a network", "D) To run software applications"], answer: "C) To uniquely identify a device on a network" },
+                    { question: "Which of the following is an example of volatile memory?", options: ["A) Hard Drive", "B) ROM", "C) RAM", "D) Flash Drive"], answer: "C) RAM" },
+                    { question: "What does the abbreviation LAN stand for?", options: ["A) Local Access Network", "B) Large Area Network", "C) Local Area Network", "D) Linked Automated Network"], answer: "C) Local Area Network" },
+                    { question: "What type of number system do computers use to process data?", options: ["A) Decimal", "B) Binary", "C) Octal", "D) Hexadecimal"], answer: "B) Binary" },
+                    { question: "What does the term ‘bit’ stand for?", options: ["A) Binary Information Technology", "B) Binary Digit", "C) Basic Internet Technology", "D) Bilingual Interface Tool"], answer: "B) Binary Digit" }
+                ]
+            },
+
+            "DSA": {
+                "Paper 1": [
+                    { question: "Which data structure follows the Last In First Out (LIFO) principle?", options: ["A) Queue", "B) Stack", "C) Linked List", "D) Tree"], answer: "B) Stack" },
+                    { question: "Which data structure is used for implementing recursion?", options: ["A) Queue", "B) Stack", "C) Linked List", "D) Array"], answer: "B) Stack" },
+                    { question: "What is the worst-case time complexity of searching an element in a balanced binary search tree (BST)?", options: ["A) O(n)", "B) O(log n)", "C) O(n log n)", "D) O(1)"], answer: "B) O(log n)" },
+                    { question: "Which sorting algorithm has the worst-case time complexity of O(n²)?", options: ["A) Merge Sort", "B) Quick Sort", "C) Bubble Sort", "D) Heap Sort"], answer: "C) Bubble Sort" },
+                    { question: "Which data structure is best suited for implementing a priority queue?", options: ["A) Stack", "B) Queue", "C) Heap", "D) Linked List"], answer: "C) Heap" },
+                    { question: "Which searching algorithm works efficiently only on sorted arrays?", options: ["A) Linear Search", "B) Binary Search", "C) Breadth-First Search", "D) Depth-First Search"], answer: "B) Binary Search" },
+                    { question: "What is the time complexity of inserting an element at the beginning of a linked list?", options: ["A) O(1)", "B) O(n)", "C) O(log n)", "D) O(n²)"], answer: "A) O(1)" },
+                    { question: "Which of the following is NOT a type of tree traversal?", options: ["A) Inorder", "B) Preorder", "C) Postorder", "D) Reverseorder"], answer: "D) Reverseorder" },
+                    { question: "Which data structure is used in Breadth-First Search (BFS)?", options: ["A) Stack", "B) Queue", "C) Linked List", "D) Heap"], answer: "B) Queue" },
+                    { question: "Which data structure is used in Depth-First Search (DFS)?", options: ["A) Queue", "B) Stack", "C) Array", "D) Graph"], answer: "B) Stack" }
+                ],
+                "Paper 2": [
+                    { question: "Which data structure allows insertion and deletion from both ends?", options: ["A) Stack", "B) Queue", "C) Deque", "D) Circular Queue"], answer: "C) Deque" },
+                    { question: "Which of the following sorting algorithms is the fastest in the average case?", options: ["A) Merge Sort", "B) Quick Sort", "C) Bubble Sort", "D) Selection Sort"], answer: "B) Quick Sort" },
+                    { question: "Which of the following data structures can be used to implement a graph?", options: ["A) Adjacency List", "B) Adjacency Matrix", "C) Both A and B", "D) None of the above"], answer: "C) Both A and B" },
+                    { question: "Which of the following operations is performed in constant time O(1) in a hash table?", options: ["A) Search", "B) Insert", "C) Delete", "D) All of the above"], answer: "D) All of the above" },
+                    { question: "Which of the following data structures allows efficient searching, insertion, and deletion in O(log n) time?", options: ["A) Array", "B) Linked List", "C) Binary Search Tree", "D) Stack"], answer: "C) Binary Search Tree" },
+                    { question: "What is the best-case time complexity of Bubble Sort?", options: ["A) O(n²)", "B) O(n log n)", "C) O(n)", "D) O(log n)"], answer: "C) O(n)" },
+                    { question: "What is the maximum number of edges in a simple undirected graph with n vertices?", options: ["A) n²", "B) n(n - 1)", "C) n(n - 1) / 2", "D) 2n"], answer: "C) n(n - 1) / 2" },
+                    { question: "Which of the following is NOT a characteristic of a queue?", options: ["A) FIFO (First In, First Out) principle", "B) Insertion at the front and deletion from the rear", "C) Insertion at the rear and deletion from the front", "D) Can be implemented using an array or linked list"], answer: "B) Insertion at the front and deletion from the rear" },
+                    { question: "Which algorithm is used to find the shortest path in a graph with non-negative weights?", options: ["A) Prim’s Algorithm", "B) Kruskal’s Algorithm", "C) Dijkstra’s Algorithm", "D) Bellman-Ford Algorithm"], answer: "C) Dijkstra’s Algorithm" },
+                    { question: "What is the time complexity of accessing an element in an array using an index?", options: ["A) O(1)", "B) O(n)", "C) O(log n)", "D) O(n²)"], answer: "A) O(1)" }
+                ],
+                "Paper 3": [
+                    { question: "Which of the following data structures is used to evaluate expressions in postfix notation?", options: ["A) Queue", "B) Stack", "C) Tree", "D) Linked List"], answer: "B) Stack" },
+                    { question: "Which tree data structure is best suited for implementing an expression tree?", options: ["A) Binary Search Tree", "B) AVL Tree", "C) Heap", "D) Binary Tree"], answer: "D) Binary Tree" },
+                    { question: "Which of the following data structures is best suited for implementing undo operations in a text editor?", options: ["A) Queue", "B) Stack", "C) Linked List", "D) Hash Table"], answer: "B) Stack" },
+                    { question: "Which of the following algorithms is used for topological sorting of a Directed Acyclic Graph (DAG)?", options: ["A) Dijkstra’s Algorithm", "B) Bellman-Ford Algorithm", "C) Depth-First Search (DFS)", "D) Kruskal’s Algorithm"], answer: "C) Depth-First Search (DFS)" },
+                    { question: "Which data structure is used to detect cycles in a graph?", options: ["A) Queue", "B) Stack", "C) Disjoint Set", "D) Priority Queue"], answer: "C) Disjoint Set" },
+                    { question: "Which of the following data structures is used to implement LRU (Least Recently Used) cache?", options: ["A) Stack and Queue", "B) Hash Map and Doubly Linked List", "C) Heap and Queue", "D) Binary Search Tree"], answer: "B) Hash Map and Doubly Linked List" },
+                    { question: "Which of the following algorithms is used for finding the Minimum Spanning Tree (MST) in a graph?", options: ["A) Dijkstra’s Algorithm", "B) Bellman-Ford Algorithm", "C) Prim’s Algorithm", "D) Floyd-Warshall Algorithm"], answer: "C) Prim’s Algorithm" },
+                    { question: "What is the worst-case time complexity of Quick Sort?", options: ["A) O(n log n)", "B) O(n²)", "C) O(n)", "D) O(log n)"], answer: "B) O(n²)" },
+                    { question: "Which data structure efficiently supports operations like insert, delete, and search in O(1) time on average?", options: ["A) Binary Search Tree", "B) Heap", "C) Hash Table", "D) Queue"], answer: "C) Hash Table" },
+                    { question: "Which of the following algorithms is used to detect negative weight cycles in a graph?", options: ["A) Dijkstra’s Algorithm", "B) Floyd-Warshall Algorithm", "C) Bellman-Ford Algorithm", "D) Kruskal’s Algorithm"], answer: "C) Bellman-Ford Algorithm" }
+                ]
+            },
+
+            "WPP": {
+                "Paper 1": [
+                    { question: "Which of the following is NOT a valid HTTP method?", options: ["A) GET", "B) PUSH", "C) POST", "D) DELETE"], answer: "B) PUSH" },
+                    { question: "Which HTML tag is used to define a hyperlink?", options: ["A) link", "B) href", "C) a", "D) url"], answer: "C) <a>" },
+                    { question: "Which CSS property is used to change the background color of an element?", options: ["A) color", "B) bgcolor", "C) background-color", "D) background"], answer: "" },
+                    { question: "Which JavaScript function is used to display a message in a popup alert box?", options: ["A) msg()", "B) alert()", "C) popup()", "D) display()"], answer: "B) alert()" },
+                    { question: "Which of the following is a valid way to define a function in JavaScript?", options: ["A) def myFunction() {}", "B) function myFunction() {}", "C) func myFunction() {}", "D) define myFunction() {}"], answer: "B) function myFunction() {}" },
+                    { question: "Which keyword is used to define a function in Python?", options: ["A) function", "B) define", "C) def", "D) func"], answer: "C) def" },
+                    { question: "What will be the output of print(3 * 'Hello ') in Python?", options: ["A) HelloHelloHello", "B) 3Hello", "C) Hello Hello Hello", "D) 'Hello' * 3"], answer: "C) Hello Hello Hello" },
+                    { question: "Which data type is used to store multiple key-value pairs in Python?", options: ["A) List", "B) Tuple", "C) Dictionary", "D) Set"], answer: "C) Dictionary" },
+                    { question: "Which of the following is the correct way to open a file in Python for reading?", options: ["A) open('file.txt', 'r')", "B) open('file.txt', 'w')", "C) open('file.txt', 'a')", "D) open('file.txt', 'x')"], answer: "A) open('file.txt', 'r')" },
+                    { question: "Which of the following is the correct syntax to check if ‘x’ is greater than 10 in Python?", options: ["A) if x > 10:", "B) if (x > 10)", "C) if x > 10 then", "D) if x greater than 10"], answer: "A) if x > 10:" }
+                ],
+                "Paper 2": [
+                    { question: "Which of the following is used to make a website responsive?", options: ["A) JavaScript", "B) CSS Media Queries", "C) HTML Tables", "D) PHP"], answer: "B) CSS Media Queries" },
+                    { question: "What does the <meta charset='UTF-8'> tag do in HTML?", options: ["A) Defines the page encoding format", "B) Adds a meta description", "C) Links external CSS", "D) Improves SEO ranking"], answer: "A) Defines the page encoding format" },
+                    { question: "Which of the following JavaScript events is triggered when the user clicks on an HTML element?", options: ["A) onmouseover", "B) onclick", "C) onhover", "D) onpress"], answer: "B) onclick" },
+                    { question: "Which of the following is NOT a valid CSS unit?", options: ["A) px", "B) em", "C) pt", "D) sec"], answer: "D) sec" },
+                    { question: "Which HTTP status code indicates a 'Page Not Found' error?", options: ["A) 200", "B) 301", "C) 404", "D) 500"], answer: "C) 404" },
+                    { question: "What is the default position of an HTML element if no position property is defined in CSS?", options: ["A) relative", "B) absolute", "C) static", "D) fixed"], answer: "C) static" },
+                    { question: "Which HTML tag is used to embed an external JavaScript file?", options: ["A) 'script'", "B) 'javascript'", "C) 'js'", "D) 'link'"], answer: "A) 'script'" },
+                    { question: "Which method is used to send form data securely?", options: ["A) GET", "B) POST", "C) PUSH", "D) SEND"], answer: "B) POST" },
+                    { question: "Which of the following is an immutable data type in Python?", options: ["A) List", "B) Dictionary", "C) Tuple", "D) Set"], answer: "C) Tuple" },
+                    { question: "What will be the output of print(type([])) in Python?", options: ["A) class 'tuple'", "B) class 'list'", "C) class 'dict'", "D) class 'set'"], answer: "B) <class 'list'>" }
+                ],
+                "Paper 3": [
+                    { question: "Which symbol is used for single-line comments in Python?", options: ["A) //", "B) !-- --", "C) #", "D) /* */"], answer: "C) #" },
+                    { question: "How do you create an empty dictionary in Python?", options: ["A) {}", "B) []", "C) ()", "D) {empty}"], answer: "A) {}" },
+                    { question: "What is the output of bool([]) in Python?", options: ["A) True", "B) False", "C) None", "D) Error"], answer: "B) False" },
+                    { question: "Which of the following functions can be used to find the length of a string in Python?", options: ["A) count()", "B) size()", "C) len()", "D) find()"], answer: "C) len()" },
+                    { question: "Which of the following is used to read a line from a file in Python?", options: ["A) read()", "B) readline()", "C) readfile()", "D) fetch()"], answer: "B) readline()" },
+                    { question: "Which of the following is NOT a valid JavaScript data type?", options: ["A) Number", "B) Boolean", "C) Float", "D) Object"], answer: "C) Float" },
+                    { question: "What is the purpose of the 'canvas' element in HTML5?", options: ["A) To create tables", "B) To draw graphics and animations using JavaScript", "C) To display images", "D) To create forms"], answer: "B) To draw graphics and animations using JavaScript" },
+                    { question: "Which keyword is used to handle exceptions in Python?", options: ["A) catch", "B) try", "C) except", "D) both B and C"], answer: "D) both B and C" },
+                    { question: "What is the output of print(2 ** 3) in Python?", options: ["A) 6", "B) 8", "C) 9", "D) 23"], answer: "B) 8" },
+                    { question: "Which of the following is used to install external Python libraries?", options: ["A) install", "B) pip", "C) import", "D) download"], answer: "B) pip" }
+                ]
+            },
+        };
+
+        function loadQuestions() {
+            let subject = localStorage.getItem('selectedSubject');
+            let mode = localStorage.getItem('selectedMode'); // Practice
+            let paper = localStorage.getItem('selectedPaper');
+
+            document.getElementById("quiz-info").innerText = `${subject} - ${mode} - ${paper}`;
+
+            let questionsHTML = "";
+            questionsData[subject][paper].forEach((q, index) => {
+                questionsHTML += `<div class='question'><p>${index + 1}. ${q.question}</p>${q.options.map(option =>`<input type='radio' name='q${index}' value='${option}'> ${option} <br>`).join("")}</div>`;
+            });
+
+            document.getElementById('questions').innerHTML = questionsHTML;
+            
+        }
+
+        function submitQuiz() {
+            let subject = localStorage.getItem('selectedSubject');
+            let paper = localStorage.getItem('selectedPaper');
+
+            let questions = questionsData[subject][paper];
+            let score = 0;
+
+            questions.forEach((q, index) => {
+                let selectedAnswer = document.querySelector(`input[name=q${index}]:checked`);
+                if (selectedAnswer && selectedAnswer.value === q.answer) {
+                    score++;
+                }
+            });
+
+            // Hide quiz section
+            document.getElementById('quiz').style.display = 'none';
+
+            // Show result section
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('score').innerText = `Your Score: ${score}/${questions.length}`;
+
+            // Add comments based on score
+            let comment = "";
+            if (score === 0) {
+                comment = "😞 Better luck next time! Keep practicing.";
+            } else if (score > 0 && score <= 5) {
+                comment = "🙂 Not bad! Try again to improve.";
+            } else if (score === 6 || score === 7 || score === 8) {
+                comment = "😊 Good job! You're getting better.";
+            } else if (score === 9) {
+                comment = "👍 Great work! Just one step away from perfection.";
+            } else if (score === 10) {
+                comment = "🌟 Excellent! You nailed it! Take a 5 to 10 minute break. Go to the Relax Hub and relax yourself.";
+            }
+
+            document.getElementById('test_hub').classList.remove('hidden');
+            document.getElementById('home_page').classList.remove('hidden');
+
+            let commentElement = document.createElement("p");
+            commentElement.innerText = comment;
+            document.getElementById('result').appendChild(commentElement);
+        }
+
+        window.onload = function () {
+            loadQuestions();
+        };
+    </script>
+</body>
+
+</html>

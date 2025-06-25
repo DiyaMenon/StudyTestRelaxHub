@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Paper</title>
+    <link rel="stylesheet" href="test_hub.css">
+</head>
+
+<body background="img3.jpg">
+    <div class="container">
+        <h1 style="color: white;">🚀 Test Hub</h1>
+        <div id="menu">
+            <h2>Select Paper</h2>
+            <button onclick="startQuiz('Paper 1')">📄 Paper 1</button>
+            <button onclick="startQuiz('Paper 2')">📄 Paper 2</button>
+            <button onclick="startQuiz('Paper 3')">📄 Paper 3</button>
+        </div>
+    </div>
+
+    <script>
+        function startQuiz(paper) {
+            localStorage.setItem('selectedPaper', paper);
+            window.location.href = 'quiz.html';
+        }
+    </script>
+</body>
+
+</html>

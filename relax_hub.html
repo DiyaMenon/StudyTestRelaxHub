@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relaxation Hub</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #1b0f2c;
+      color: black;
+      text-align: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      height: 100%;
+      align-items: flex-end;
+      background: black;
+      /*#313152;*/
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    #search {
+      position: absolute;
+      right: 150px;
+      top: 20px;
+    }
+
+    nav {
+      position: relative;
+      height: auto;
+      width: max-content;
+      font-weight: 1000px;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    .navbar a:hover {
+      color: white;
+      background-color: #a7c7e7;
+    }
+
+    /* Main content */
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      padding: 80px 20px;
+      flex-wrap: wrap;
+    }
+
+    .clickable-image {
+      background-color: #B7CBBF;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px #B7CBBF;
+      transition: all 0.3s ease;
+      width: 500px;
+      text-align: center;
+    }
+
+    .clickable-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .clickable-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-label {
+      padding: 15px;
+      font-size: 18px;
+      color: white;
+      background-color: black;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+    }
+
+    .footer,.footer a{
+    text-align: center;
+    font-size:24px;
+    padding:10px;
+    background-color:black;
+    color: #D1D5DB;
+    border-radius:5px;
+    }
+    a{
+        text-decoration:none
+    }
+    i{
+        color:#012826;
+        background-color:white;
+        border-radius:50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <h2>STUDY, TEST AND RELAX HUB</h2>
+    
+    <a class="nav" href="homepage.html">Home</a>
+    <a class="nav" href="todolist.html">Study</a>
+    <a class="nav" href="index.html">Test</a>
+    <a class="nav" href="https://www.crazygames.com" target="_blank">Game Time</a>
+    <a class="nav" href="try2.html">Relax</a>
+    <a class="nav" href="contact_us.html">Contact Us</a>
+  </div>
+
+  <!-- Main Clickable Content -->
+  <div class="main-content">
+    <div class="clickable-image" onclick="window.location.href='try2.html'">
+      <img src="relax music.jpg" alt="Relaxation Music" />
+      <div class="image-label">Relax with Music</div>
+    </div>
+    <div class="clickable-image" onclick="window.location.href='https://www.crazygames.com'">
+      <img src="videogame.jpg" alt="Play Game" />
+      <div class="image-label">Play a Game</div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Built for minds that never stop learning</p>
+    <p><a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+    </p>
+    <p><a href="contact_us.html">Contact Us</a></p>
+  </div>
+</body>
+
+</html>

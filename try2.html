@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxation Page</title>
+    <style>
+        /* Default Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 10 0vh;
+            background: url('image1.jpg') no-repeat center center/cover;
+            transition:1s ease-in-out;
+            font-family: 'Outfit', sans-serif;
+            position: relative;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 125px;
+            align-items: flex-end;
+            background: black;
+            /*#313152;*/
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+
+        #search {
+            position: absolute;
+            right: 150px;
+            top: 20px;
+        }
+
+        nav {
+            position: relative;
+            height: auto;
+            width: max-content;
+            font-weight: 1000px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        .navbar a:hover {
+            color: grey;
+            background-color: #a7c7e7;
+        }
+
+        /* Main Content */
+        /* .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            margin-top: 500px;
+        } */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+
+        h1 {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 15px;
+        }
+        h2{
+            color: white;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            color: white;
+        }
+
+        .start-btn {
+            background-color: #4CAF50;
+        }
+
+        .layout-btn {
+            background-color: #008CBA;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>STUDY, TEST AND RELAX HUB</h2>
+        
+        <a class="nav" href="homepage.html">Home</a>
+        <a class="nav" href="todolist.html">Study</a>
+        <a class="nav" href="index.html">Test</a>
+        <a class="nav" href="https://www.crazygames.com" target="_blank">Game Time</a>
+        <a class="nav" href="try2.html">Relax</a>
+        <a class="nav" href="contact_us.html">Contact Us</a>
+      </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Main Relaxation Section -->
+    <div class="container">
+        <h1>Relax and Unwind</h1>
+        <button class="start-btn" onclick="startRelaxing()">Start Relaxing</button>
+        <button class="layout-btn" onclick="changeLayout()">Change Scene</button>
+        <audio id="relaxMusic" loop>
+            <source id="audioSource" src="relaxing1.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    
+    <script>
+        let layoutIndex = 0;
+
+        // List of image filenames (must be in the same folder)
+        const imageFiles = ["image1.jpg", "image2.jpg", "image3.jpg"];
+
+        // List of music filenames (must be in the same folder)
+        const audioTracks = ["relaxing1.mp3", "relaxing2.mp3", "relaxing3.mp3"];
+
+        function startRelaxing() {
+            const audio = document.getElementById("relaxMusic");
+            audio.play().catch(error => console.log("Autoplay failed:", error));
+        }
+
+        function changeLayout() {
+            layoutIndex = (layoutIndex + 1) % imageFiles.length;
+            document.body.style.backgroundImage = `url('${imageFiles[layoutIndex]}')`;
+
+            const audio = document.getElementById("relaxMusic");
+            const audioSource = document.getElementById("audioSource");
+            audioSource.src = audioTracks[layoutIndex];
+            audio.load();
+            audio.play().catch(error => console.log("Autoplay failed:", error));
+        }
+    </script>
+</body>
+
+</html>

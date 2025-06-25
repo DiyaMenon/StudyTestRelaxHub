@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming Principles</title>
+    <link rel="stylesheet" href="wpp.css"> <!-- Linking external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Web Programming And Python</h1>
+
+        <h2>What is HTML?</h2>
+        <p>HTML (HyperText Markup Language) is the standard language used to create and design web pages. It structures web content using elements such as headings, paragraphs, lists, links, images, and tables.</p>
+
+        <h2>Basic HTML Syntax</h2>
+        <p>HTML uses **tags** enclosed in angle brackets <code>&lt;tag&gt;</code> to define elements. A basic HTML document includes:</p>
+
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Heading 1&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h2>Commonly Used HTML Elements</h2>
+        <ul>
+            <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong> - Headings</li>
+            <li><strong>&lt;p&gt;</strong> - Paragraph</li>
+            <li><strong>&lt;a href="URL"&gt;</strong> - Hyperlink</li>
+            <li><strong>&lt;img src="image.jpg" alt="Description"&gt;</strong> - Image</li>
+            <li><strong>&lt;ul&gt; &lt;li&gt;</strong> - Unordered list</li>
+            <li><strong>&lt;ol&gt; &lt;li&gt;</strong> - Ordered list</li>
+            <li><strong>&lt;table&gt; &lt;tr&gt; &lt;td&gt;</strong> - Table</li>
+            <li><strong>&lt;div&gt;</strong> - Section container</li>
+            <li><strong>&lt;span&gt;</strong> - Inline container</li>
+        </ul>
+
+        <h2>HTML Example with Styling</h2>
+        <p>Here’s an example demonstrating background color, font size, div, lists, and a table:</p>
+
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;HTML Example&lt;/title&gt;
+        &lt;style&gt;
+            body {
+                background-color: lightblue;
+                font-size: 18px;
+            }
+            .container {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            h1 {
+                color: darkblue;
+            }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;h1&gt;My Web Page&lt;/h1&gt;
+            &lt;p&gt;Welcome to my webpage!&lt;/p&gt;
+
+            &lt;h2&gt;Favorite Hobbies&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Reading&lt;/li&gt;
+                &lt;li&gt;Gaming&lt;/li&gt;
+                &lt;li&gt;Coding&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;h2&gt;Top 3 Programming Languages&lt;/h2&gt;
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Rank&lt;/th&gt;
+                    &lt;th&gt;Language&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;1&lt;/td&gt;
+                    &lt;td&gt;Python&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;2&lt;/td&gt;
+                    &lt;td&gt;JavaScript&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;3&lt;/td&gt;
+                    &lt;td&gt;C++&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <img src="forwpp.jpg.png" alt="HTML" style="width:90%; height:100%;">
+        <h2>Introduction to CSS</h2>
+        <p>CSS (Cascading Style Sheets) is used to style HTML elements. It controls layout, colors, fonts, spacing, and animations.</p>
+
+        <h3>Types of CSS</h3>
+        <ul>
+            <li><strong>Inline CSS:</strong> Defined inside the HTML element using the <code>style</code> attribute.</li>
+            <li><strong>Internal CSS:</strong> Defined inside the <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code> section.</li>
+            <li><strong>External CSS:</strong> Stored in a separate file and linked using <code>&lt;link&gt;</code>.</li>
+        </ul>
+
+        <h3>Example of CSS</h3>
+        <pre>
+/* External CSS file (style.css) */
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+        </pre>
+
+        <h2>Introduction to JavaScript</h2>
+        <p>JavaScript is a programming language used to add interactivity to websites. It allows dynamic content, form validation, and event handling.</p>
+
+        <h3>Basic JavaScript Example</h3>
+        <p>This script displays an alert when the page loads:</p>
+
+        <pre>
+&lt;script&gt;
+    alert("Welcome to Web Development!");
+&lt;/script&gt;
+        </pre>
+
+        <h3>JavaScript in Action (Button Click)</h3>
+        <pre>
+&lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+    function showMessage() {
+        alert("Hello, you clicked the button!");
+    }
+&lt;/script&gt;
+        </pre>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <span class="active">1</span>
+            <a href="wpp2.html">2</a>
+            <a href="wpp3.html">3</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

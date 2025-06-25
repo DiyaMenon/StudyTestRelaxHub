@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Goals - To-Do List</title>
+  <style>
+    
+    body {
+      background: #0a0f2c;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 2px teal;
+      font-size: 3em;
+      margin-top: 30px;
+    }
+
+    
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 10px 0;
+      background-color: #0D1117;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .navbar a {
+      color: #f0f6fc;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      color: white;
+      background-color: #313152;
+    }
+
+    /*todo starts*/
+    .todo-box {
+      background: #1e223a;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      width: 320px;
+      margin: 40px auto;
+    }
+
+    .todo-box h1 {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 65%;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background-color: #313152;
+      color: white;
+    }
+
+    button {
+      padding: 10px;
+      background-color: teal;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00b3b3;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: 16px;
+      background-color: #2d2f4a;
+      padding: 8px 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    li input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    
+    .notes-button {
+      background-color: #190086;
+      padding: 12px 25px;
+      border-radius: 8px;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .notes-button:hover {
+      background-color: #00b3b3;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>STUDY, TEST AND RELAX HUB</h1>
+
+  <div class="navbar">
+    <a class="nav" href="homepage.html">Home</a>
+    <a class="nav" href="notes_main.html" target="_blank">Study</a>
+    <a class="nav" href="index.html">Test</a>
+    <a class="nav" href="relax_hub.html">Relax</a>
+    <a class="nav" href="contact_us.html">Contact Us</a>
+  </div>
+
+  <br><br>
+  
+  <a href="notes_main.html" target="_blank" class="notes-button">Notes</a>
+
+  <div class="todo-box">
+    <h1>Study Goals</h1>
+    <input type="text" id="taskInput" placeholder="Write your goal here..." />
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      
+      const input = document.getElementById("taskInput");
+
+      
+      const taskText = input.value.trim();
+
+      
+      if (taskText === "") return;
+
+      
+      const li = document.createElement("li");
+
+
+      const checkbox = document.createElement("input"); //makes checkbox
+      checkbox.type = "checkbox";
+
+      
+      checkbox.addEventListener("change", function () { //when checkbox clicked
+        if (checkbox.checked) {
+          li.classList.add("completed");
+        } else {
+          li.classList.remove("completed");
+        }
+      });
+
+      
+      li.appendChild(checkbox);
+      li.appendChild(document.createTextNode(taskText));
+
+      
+      document.getElementById("taskList").appendChild(li);
+
+     
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #c9234a6d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container_quiz {
+    max-width: 600px;
+    margin: auto;
+    background: #f0efefdb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+    color: #333;
+}
+
+button {
+    background: linear-gradient(135deg, #0d5db3, #0d5db3);
+    color: white;
+    border: none;
+    padding: 14px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1565c0, #0d47a1);
+    transform: scale(1.05);
+}
+
+.menu,
+.quiz,
+.practice {
+    display: none;
+}
+
+.question {
+    margin: 20px 0;
+    padding: 10px;
+    background: #f9f9f985;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#home_page{
+    background: linear-gradient(135deg, #0d5db3, #0d5db3);
+    color: white;
+    width: 30%;
+    padding: 14px;
+    border-radius: 5px;
+    border: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#home_page :hover{
+    background-color: #0056b3;
+}
+#test_hub{
+    background: linear-gradient(135deg, #0d5db3, #0d5db3);
+    color: white;
+    width: 30%;
+    padding: 14px;
+    border-radius: 5px;
+    border: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#test_hub :hover{
+    background-color: #0056b3;
+}
+#result {
+    background: #89f7a371;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-top: 20px;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #03e9fa5a;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Mode</title>
+    <link rel="stylesheet" href="test_hub.css">
+</head>
+
+<body background="img2.jpg">
+    <div class="container">
+        <h1 style="color: white;">🚀 Test Hub</h1>
+        <div id="menu">
+            <h2>Select Mode</h2>
+            <button onclick="navigateToPaperSelection('Practice')">🎯 Practice</button>
+            <p  align="left" style="color: rgb(249, 217, 157); font-family: 'Courier New', Courier, monospace;"><b>>> Enhance your learning with Practice Mode! You will get 10 questions, each worth 1 mark, for a total of 10 marks—but with no time limit. Take your time to understand each question and improve at your own pace. Practice as much as you need to master the concepts!</b></p>
+        </div>
+    </div>
+
+    <script>
+        function navigateToPaperSelection(mode) {
+            localStorage.setItem('selectedMode', mode);
+            window.location.href = 'paper_selection.html';
+        }
+    </script>
+</body>
+
+</html>
+

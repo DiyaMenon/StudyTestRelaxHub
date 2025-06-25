@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming</title>
+    <link rel="stylesheet" href="wpp.css"> <!-- External CSS file -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Web Programming And Python</h1>
+
+        <h2>What is Python?</h2>
+        <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used in web development, data science, artificial intelligence, automation, and more.</p>
+
+        <h2>Why Use Python?</h2>
+        <ul>
+            <li>Easy to learn and use.</li>
+            <li>Supports multiple programming paradigms.</li>
+            <li>Large community and vast libraries.</li>
+            <li>Cross-platform compatibility.</li>
+        </ul>
+
+        <h2>How to Use Python?</h2>
+        <p>You can install Python from <a href="https://www.python.org/downloads/" target="_blank">python.org</a>. To write and run Python code:</p>
+        <ul>
+            <li>Use an IDE like **PyCharm, VS Code, Jupyter Notebook**.</li>
+            <li>Run Python scripts in the **terminal** using `python script.py`.</li>
+            <li>Use the **Python interactive shell** by typing `python` in the terminal.</li>
+        </ul>
+
+        <h2>Basic Syntax in Python</h2>
+        <p>Python does not require semicolons and uses indentation to define blocks of code.</p>
+
+        <h3>Printing in Python</h3>
+        <pre>
+# Print a message
+print("Hello, World!")
+        </pre>
+
+        <h3>Variables and Data Types</h3>
+        <pre>
+# Integer, Float, String
+num = 10       # Integer
+pi = 3.14      # Float
+name = "Alice" # String
+
+# Printing variables
+print(num, pi, name)
+        </pre>
+
+        <h3>Taking User Input</h3>
+        <pre>
+# Taking input from the user
+name = input("Enter your name: ")
+print("Hello, " + name + "!")
+        </pre>
+
+        <h2>Conditional Statements (If-Else)</h2>
+        <pre>
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You are an adult.")
+elif age > 12:
+    print("You are a teenager.")
+else:
+    print("You are a child.")
+        </pre>
+
+        <h2>Loops in Python</h2>
+        <h3>For Loop</h3>
+        <pre>
+# Print numbers from 1 to 5
+for i in range(1, 6):
+    print(i)
+        </pre>
+
+        <h3>While Loop</h3>
+        <pre>
+# Print numbers from 1 to 5 using while loop
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+        </pre>
+
+        <h3>Break and Continue</h3>
+        <pre>
+# Using break
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+
+# Using continue
+for i in range(1, 10):
+    if i == 5:
+        continue
+    print(i)
+        </pre>
+
+        <h2>Functions in Python</h2>
+        <pre>
+# Function to add two numbers
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print("Sum:", result)
+        </pre>
+
+        <h2>Lists, Tuples, and Dictionaries</h2>
+        <h3>Lists (Mutable)</h3>
+        <pre>
+# List Example
+fruits = ["Apple", "Banana", "Cherry"]
+fruits.append("Mango")  # Adding an element
+print(fruits)
+        </pre>
+
+        <h3>Tuples (Immutable)</h3>
+        <pre>
+# Tuple Example
+coordinates = (10, 20)
+print(coordinates)
+        </pre>
+
+        <h3>Dictionaries (Key-Value Pairs)</h3>
+        <pre>
+# Dictionary Example
+student = {
+    "name": "Alice",
+    "age": 20,
+    "course": "CS"
+}
+print(student["name"])
+        </pre>
+
+        <h2>File Handling</h2>
+        <pre>
+# Writing to a file
+file = open("example.txt", "w")
+file.write("Hello, Python!")
+file.close()
+
+# Reading from a file
+file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()
+        </pre>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="wpp1.html">1</a>
+            <span class="active">2</span>
+            <a href="wpp3.html">3</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

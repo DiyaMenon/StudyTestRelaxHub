@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errors & Recursion in C</title>
+    <link rel="stylesheet" href="iop.css">  <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Introduction to Programming</h1>
+
+        <h2>Types of Errors in C</h2>
+
+        <h3>1. Compilation Errors</h3>
+        <p>Compilation errors occur during the compilation stage, preventing the code from being converted into machine language.</p>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!") // Missing semicolon
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>Why is this an error?</strong> The compiler expects a semicolon (`;`) at the end of the `printf` statement. Without it, the code won't compile.</p>
+
+        <h3>2. Syntax Errors</h3>
+        <p>Syntax errors arise when the C language rules are violated, such as missing brackets or incorrect keywords.</p>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int 1number = 10; // Variable names cannot start with a number
+    printf("%d", 1number);
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>Why is this an error?</strong> Variable names cannot start with a number, causing a syntax error.</p>
+
+        <h3>3. Linking Errors</h3>
+        <p>Linking errors occur when the compiler cannot find the definition of a function or variable used in the program.</p>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    myFunction(); // No definition provided
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>Why is this an error?</strong> The function `myFunction()` is called but not defined, leading to a linker error.</p>
+
+        <h3>4. Runtime Errors</h3>
+        <p>Runtime errors occur while the program is running, such as division by zero or accessing invalid memory locations.</p>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 5, b = 0;
+    printf("%d", a / b); // Division by zero
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>Why is this an error?</strong> Division by zero is undefined and causes the program to crash.</p>
+
+        <h3>5. Other Common Errors</h3>
+        <ul>
+            <li><strong>Segmentation Fault:</strong> Accessing memory that doesn't belong to the program.</li>
+            <li><strong>Uninitialized Variables:</strong> Using a variable without assigning a value.</li>
+            <li><strong>Infinite Loops:</strong> A loop without a proper termination condition.</li>
+            <li><strong>Type Mismatch:</strong> Assigning a float value to an int variable without typecasting.</li>
+        </ul>
+
+        <h2>Recursion in C</h2>
+        <p>Recursion is a process in which a function calls itself until a base condition is met. It is commonly used for tasks like factorial, Fibonacci series, and tree traversal.</p>
+
+        <h3>Factorial Using Recursion</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0) return 1; // Base case
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 5;
+    printf("Factorial of %d is %d", num, factorial(num));
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>Factorial Without Recursion</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 5, fact = 1;
+    for (int i = 1; i <= num; i++) {
+        fact *= i;
+    }
+    printf("Factorial of %d is %d", num, fact);
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>Fibonacci Series Using Recursion</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int fibonacci(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n = 10;
+    printf("Fibonacci Series: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>How it works?</strong> The function calls itself for `n-1` and `n-2` until it reaches base cases (`0` and `1`). The results are added to generate the series.</p>
+
+        <h3>Sum of Digits Using Recursion</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int sumOfDigits(int n) {
+    if (n == 0) return 0; // Base case
+    return (n % 10) + sumOfDigits(n / 10);
+}
+
+int main() {
+    int num = 1234;
+    printf("Sum of digits: %d", sumOfDigits(num));
+    return 0;
+}
+            </code>
+        </pre>
+
+        <h3>Sum of Digits Without Recursion</h3>
+        <pre>
+            <code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 1234, sum = 0;
+    while (num > 0) {
+        sum += num % 10; // Add last digit
+        num /= 10;       // Remove last digit
+    }
+    printf("Sum of digits: %d", sum);
+    return 0;
+}
+            </code>
+        </pre>
+        <p><strong>How it works?</strong> The loop extracts the last digit using `%10`, adds it to `sum`, and then removes the last digit using `/10` until `num` becomes `0`.</p>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="iop.html">1</a>
+            <a href="iop2.html">2</a>
+            <span class="active">3</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
