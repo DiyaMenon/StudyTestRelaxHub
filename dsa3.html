@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Lists in Data Structures</title>
+    <link rel="stylesheet" href="dsa.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Data Structures And Algorithms</h1>
+
+        <h2>What is a Linked List?</h2>
+        <p>A linked list is a linear data structure in which elements (nodes) are linked together using pointers. Unlike arrays, linked lists do not have a fixed size, and elements can be inserted or removed dynamically.</p>
+
+        <h3>Types of Linked Lists</h3>
+        <ul>
+            <li><strong>Singly Linked List:</strong> Each node points to the next node in the sequence.</li>
+            <li><strong>Doubly Linked List:</strong> Each node contains pointers to both the previous and next node.</li>
+            <li><strong>Circular Linked List:</strong> The last node connects back to the first node, forming a loop.</li>
+        </ul>
+
+        <h2>Singly Linked List Implementation</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+
+void insert(int val) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    newNode->next = head;
+    head = newNode;
+}
+
+void delete(int key) {
+    struct Node *temp = head, *prev = NULL;
+    if (temp != NULL && temp->data == key) {
+        head = temp->next;
+        free(temp);
+        return;
+    }
+    while (temp != NULL && temp->data != key) {
+        prev = temp;
+        temp = temp->next;
+    }
+    if (temp == NULL) return;
+    prev->next = temp->next;
+    free(temp);
+}
+
+void display() {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+        </pre>
+
+        <h3>Explanation of Singly Linked List</h3>
+        <p><strong>Insert:</strong> Adds a new node at the beginning and updates `head`.</p>
+        <p><strong>Delete:</strong> Searches for a node and removes it, updating links accordingly.</p>
+        <p><strong>Display:</strong> Traverses from `head` and prints each element.</p>
+
+        <h2>Doubly Linked List Implementation</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node* prev;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+
+void insert(int val) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    newNode->prev = NULL;
+    newNode->next = head;
+    if (head != NULL) head->prev = newNode;
+    head = newNode;
+}
+
+void delete(int key) {
+    struct Node* temp = head;
+    while (temp != NULL && temp->data != key) temp = temp->next;
+    if (temp == NULL) return;
+    if (temp->prev != NULL) temp->prev->next = temp->next;
+    if (temp->next != NULL) temp->next->prev = temp->prev;
+    if (temp == head) head = temp->next;
+    free(temp);
+}
+
+void display() {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d <-> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+        </pre>
+
+        <h3>Explanation of Doubly Linked List</h3>
+        <p><strong>Insert:</strong> Creates a new node and updates `prev` and `next` pointers.</p>
+        <p><strong>Delete:</strong> Removes a node and updates both previous and next pointers.</p>
+        <p><strong>Display:</strong> Traverses and prints elements in both directions.</p>
+
+        <h2>Circular Linked List Implementation</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* last = NULL;
+
+void insert(int val) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = val;
+    if (last == NULL) {
+        last = newNode;
+        last->next = last;
+    } else {
+        newNode->next = last->next;
+        last->next = newNode;
+        last = newNode;
+    }
+}
+
+void delete(int key) {
+    if (last == NULL) return;
+    struct Node *temp = last, *prev;
+    do {
+        prev = temp;
+        temp = temp->next;
+        if (temp->data == key) {
+            if (temp == last && temp->next == last) {
+                last = NULL;
+            } else if (temp == last) {
+                prev->next = last->next;
+                last = prev;
+            } else {
+                prev->next = temp->next;
+            }
+            free(temp);
+            return;
+        }
+    } while (temp != last);
+}
+
+void display() {
+    if (last == NULL) return;
+    struct Node* temp = last->next;
+    do {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    } while (temp != last->next);
+    printf("(Back to Start)\n");
+}
+        </pre>
+
+        <h3>Explanation of Circular Linked List</h3>
+        <p><strong>Insert:</strong> New nodes are inserted at the end, and the last node points back to the first.</p>
+        <p><strong>Delete:</strong> Searches and removes a node, updating links while maintaining circularity.</p>
+        <p><strong>Display:</strong> Traverses and prints elements, looping back at the end.</p>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <a href="dsa1.html">1</a>
+            <a href="dsa2.html">2</a>
+            <span class="active">3</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

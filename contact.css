@@ -1,0 +1,30 @@
+body{
+    background-color: #1b0d3f; /* 1e1e2f or 2a2f45 or 1bod3f*/
+    color:whitesmoke;
+}
+h1{
+    text-shadow:1px 1px 2px magenta;
+    text-align:center;
+}
+table{
+    font-size: 24px;
+}
+#last{
+    text-align: center;
+}
+.footer,.footer a{
+    text-align: center;
+    font-size:24px;
+    padding:10px;
+    background-color: #1A1A2E;
+    color: #D1D5DB;
+    border-radius:5px;
+}
+a{
+    text-decoration:none
+}
+i{
+    color:#012826;
+    background-color:white;
+    border-radius:50%;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact_us</title>
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <h1>Feedback Form</h1>
+    <hr>
+    <hr><br>
+    <form id="frm" action="homepage.html" method="get" enctype="multipart/form-data" onsubmit="return validate()">
+        <table align="center" cellspacing="5px" cellpadding="5px">
+            <tr>
+                <td><label for="name">Name*</label></td>
+                <td>:</td>
+                <td><input name="fn" id="name" type="text" size="20"></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td><label for="mob">Contact No.</label></td>
+                <td>:</td>
+                <td><input name="mob" type="text" size="20"></td>
+            </tr>
+            <tr>
+                <td><label for="mail">E-mail*</label></td>
+                <td>:</td>
+                <td><input name="mail" type="email" size="20"></td>
+            </tr>
+            <tr>
+                <td><label for="rate">How was your experience?</label></td>
+                <td>:</td>
+                <td>
+                    <input name="r" type="radio">Not good😩<br>
+                    <input name="r" type="radio">Satisfactory🙂<br>
+                    <input name="r" type="radio">Good😊<br>
+                    <input name="r" type="radio">Excellent😍
+                </td>
+            </tr>
+            <tr>
+                <td><label for="sem">College Semester*</label></td>
+                <td>:</td>
+                <td>
+                    <select name="sem">
+                        <option selected value="0">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="ss" title="You can add srceenshot of your progress">Screenshot</label></td>
+                <td>:</td>
+                <td><input name="ss" type="file" value="Choose File"></td>
+            </tr>
+            <tr>
+                <td><label>Any Suggestions</label> </td>
+                <td>:</td>
+                <td><textarea rows="5" cols="30" overflow="auto"></textarea></td>
+            </tr>
+            <tr id="last">
+                <td colspan="2"><input type="submit" value="Submit" size="10px"></td>
+                <td colspan="2"><input type="reset" value="Clear" size="10px"></td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    <p>NOTE : All the fields with * and rating are mandatory</p>
+    <hr>
+    <div class="footer">
+        <p>Built for minds that never stop learning</p>
+        <p><a href="https://www.instagram.com"><i class="bx bxl-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.facebook.com"><i class="bx bxl-facebook"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.youtube.com"><i class="bx bxl-youtube"></i></a>
+        </p>
+        <p><a href="contact_us.html">Contact Us</a></p>
+    </div>
+    <script>
+        function validate() {
+
+            const n = document.getElementById("name");
+            if (n.value === "") {
+                alert("Enter your name please!");
+                n.focus();
+                return false;
+            }
+
+            const m = document.getElementsByName("mail")[0];
+            const pattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$";
+            var regex = new RegExp(pattern);
+            //(email != pattern) --> This is comparing a string (email) to a RegExp object (pattern)
+
+            if (m.value === "" || (!regex.test(m.value))) {
+                alert("Please enter your e-mail properly!\n(All letters should be in lower case)");
+                m.focus();
+                return false;
+            }
+
+
+            const no = document.getElementsByName("mob")[0];
+            if (isNaN(no.value) || no.value.length != 10) {
+                if (no.value) {
+                    alert("Enter a proper contact no.");
+                    no.focus();
+                    return false;
+                }
+            }
+
+            const rate = document.getElementsByName("r");
+            let optionSel = false;
+            for (option of rate) {
+                if (option.checked) {
+                    optionSel = true;
+                    break;
+                }
+            }
+            if (!optionSel) {
+                alert("Please rate our site!");
+                rate[0].focus();
+                return false;
+            }
+            const sem = document.getElementsByName("sem")[0];
+            if (sem.value == 0) {
+                alert("Enter your semester please!");
+                sem.focus();
+                return false;
+            }
+            return true;
+        }    
+    </script>
+</body>
+
+</html>

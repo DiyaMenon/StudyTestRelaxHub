@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures - Arrays & Stacks</title>
+    <link rel="stylesheet" href="dsa.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Data Structures And Algorithms</h1>
+
+        <h2>Arrays</h2>
+        <p>An array is a collection of elements stored at contiguous memory locations. It allows multiple values to be stored under a single variable name.</p>
+        
+        <h3>Why Use Arrays?</h3>
+        <ul>
+            <li>Efficient storage and retrieval of elements.</li>
+            <li>Easy access using indexing.</li>
+            <li>Useful for managing large datasets.</li>
+        </ul>
+
+        <h3>Accessing Elements in an Array (C Program)</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50}; 
+    printf("First element: %d\n", arr[0]); 
+    printf("Third element: %d\n", arr[2]); 
+    return 0;
+}
+        </pre>
+
+        <h3>Explanation</h3>
+        <p>Each element in an array is accessed using its index (starting from 0). The program above prints the first and third elements.</p>
+
+        <h3>Common Operations on Arrays</h3>
+        <ul>
+            <li>Insertion</li>
+            <li>Deletion</li>
+            <li>Searching</li>
+            <li>Sorting</li>
+            <li>Traversing</li>
+        </ul>
+
+        <h2>Stacks</h2>
+        <p>A stack is a **Last In, First Out (LIFO)** data structure where elements are added and removed from the same end, called the **top**.</p>
+
+        <h3>Operations in a Stack</h3>
+        <ul>
+            <li><strong>Push:</strong> Adds an element to the top of the stack.</li>
+            <li><strong>Pop:</strong> Removes the top element.</li>
+            <li><strong>Peek:</strong> Returns the top element without removing it.</li>
+            <li><strong>Display:</strong> Shows all elements in the stack.</li>
+        </ul>
+
+        <h3>Stack Implementation Using Arrays</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+#define SIZE 5
+
+int stack[SIZE], top = -1;
+
+void push(int value) {
+    if (top == SIZE - 1)
+        printf("Stack Overflow\n");
+    else
+        stack[++top] = value;
+}
+
+int pop() {
+    if (top == -1)
+        printf("Stack Underflow\n");
+    else
+        return stack[top--];
+}
+
+int peek() {
+    if (top == -1)
+        printf("Stack is Empty\n");
+    else
+        return stack[top];
+}
+
+void display() {
+    if (top == -1)
+        printf("Stack is Empty\n");
+    else {
+        for (int i = top; i >= 0; i--)
+            printf("%d ", stack[i]);
+    }
+}
+        </pre>
+        <h3>How Stack Functions Work (Array Implementation)</h3>
+        <p><strong>Push:</strong> Adds an element at the top by incrementing `top` and storing the value.</p>
+        <p><strong>Pop:</strong> Removes the top element by decrementing `top` and returning the value.</p>
+        <p><strong>Peek:</strong> Returns the element at `top` without removing it.</p>
+        <p><strong>Display:</strong> Prints all elements from `top` to the bottom of the stack.</p>
+
+
+        <h3>Stack Implementation Using Linked List</h3>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* top = NULL;
+
+void push(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = top;
+    top = newNode;
+}
+
+int pop() {
+    if (top == NULL)
+        printf("Stack Underflow\n");
+    else {
+        int value = top->data;
+        struct Node* temp = top;
+        top = top->next;
+        free(temp);
+        return value;
+    }
+}
+
+int peek() {
+    if (top == NULL)
+        printf("Stack is Empty\n");
+    else
+        return top->data;
+}
+
+void display() {
+    struct Node* temp = top;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+}
+        </pre>
+        <h3>How Stack Functions Work (Linked List Implementation)</h3>
+        <p><strong>Push:</strong> Creates a new node, assigns it the value, and sets it as the new `top`.</p>
+        <p><strong>Pop:</strong> Removes the `top` node, stores its value, and updates `top` to the next node.</p>
+        <p><strong>Peek:</strong> Returns the data in the `top` node without modifying the stack.</p>
+        <p><strong>Display:</strong> Traverses the linked list and prints each element.</p>
+
+        <h2>Real-Life Applications of Stacks</h2>
+        <ul>
+            <li><strong>Undo/Redo Functionality:</strong> Text editors use stacks to track changes.</li>
+            <li><strong>Backtracking:</strong> Used in recursive algorithms, such as maze-solving.</li>
+            <li><strong>Function Call Stack:</strong> Stores return addresses for function calls.</li>
+            <li><strong>Expression Evaluation:</strong> Used in parsing expressions in compilers.</li>
+            <li><strong>Browser History:</strong> Stores visited pages in a stack.</li>
+        </ul>
+
+        <!-- Page Navigation -->
+        <div class="pagination">
+            <span class="active">1</span>
+            <a href="dsa2.html">2</a>
+            <a href="dsa3.html">3</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
